@@ -21,11 +21,15 @@ const AuthForm = () => {
    setIsLoading(true)
 
    //option : Add valid-ation
+   let url;
 
    if(isLogin){
-
+    url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAn_2OLrhrkgsJBUJI_H9eh62XiqHHR208'
    }else{
-    fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAn_2OLrhrkgsJBUJI_H9eh62XiqHHR208',
+    url ='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAn_2OLrhrkgsJBUJI_H9eh62XiqHHR208'
+    
+   }
+   fetch(url,
     {
       method: 'POST',
       body: JSON.stringify({
@@ -49,11 +53,14 @@ const AuthForm = () => {
           //   errorMessage = data.error.message;
           // }
           alert(errorMessage)
+          throw new Error(errorMessage)
            
         })
       }
+    }).then(data=>{
+      console.log(data)
+    }).catch((err)=>{alert(err.message)
     })
-   }
   }
   return (
     <section className={classes.auth}>
