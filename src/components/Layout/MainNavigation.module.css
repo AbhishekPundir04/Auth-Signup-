@@ -1,55 +1,56 @@
+
 .header {
-  width: 100%;
-  height: 5rem;
-  background-color: #38015c;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  height: 6rem;
+  background-color: #222;
+  color: #fff;
 }
 
 .logo {
-  font-family: 'Lato', sans-serif;
   font-size: 2rem;
-  color: white;
-  margin: 0;
+  font-weight: bold;
+  padding: 0.5rem;
 }
 
-.header ul {
+nav ul {
+  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: baseline;
 }
 
-.header li {
-  margin: 0 1rem;
+nav ul li {
+  margin-left: 2rem;
 }
 
-.header a {
+nav ul li:first-of-type {
+  margin-left: 0;
+}
+
+nav ul li a {
+  color: #fff;
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
-.header button {
-  font: inherit;
+nav ul li a:hover,
+nav ul li a:active {
+  background-color: #555;
+}
+
+nav button {
   background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  font-weight: bold;
-  padding: 0.5rem 1.5rem;
-  border-radius: 6px;
+  border: none;
+  color: #fff;
   cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1rem;
 }
 
-.header a:hover {
-  color: #c291e2;
-}
-
-.header button:hover {
-  background-color: #c291e2;
-  color: #38015c;
+nav button:hover,
+nav button:active {
+  background-color: #555;
 }
